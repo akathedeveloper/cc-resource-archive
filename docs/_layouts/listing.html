@@ -59,11 +59,8 @@
           {% endif %}
         </header>
 
-        <!-- If the page following this layout is All (all.html), then display the page content here -->
-        {% if page.title == "All" %} {{content}} {% endif %}
-
         <!-- This is the section that shows all the resource cards in the site.
-       The homepage shows upto 16 'featured' items ordered (1) to (16 or lesser) -->
+        The homepage shows upto 16 'featured' items ordered (1) to (16 or lesser) -->
         <ul id="thumbnaillist">
           {% for i in (1..16) %} {% for page in site.pages %} {% if page.layout
           =='resource' %} {% if page.featured == i %}
@@ -106,8 +103,8 @@
           endfor %} {% endunless %}
         </ul>
 
-        <!-- If the page following this layout is Homepage (index.html), then display the page content here -->
-        {% if page.title == "Home" %} {{content}} {% endif %}
+        <!-- The content contained in the pages following this layout will be displayed here -->
+        {{content}}
 
         <!-- As we added two <main> tags above in the if statement, we will have to close it twice depending on the page -->
         {% if page.title == "All" %}
